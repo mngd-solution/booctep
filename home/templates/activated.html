@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+{% load static %}
+{% load i18n %}
+
+
+
+    <style>
+
+       .summary-ca h2 {
+           font-size: 1.4rem;
+           font-weight: bold;
+       }
+       .summary-ca h3 {
+           font-size: 1.2rem;
+       }
+       body{
+           height: 100% !important;
+       }
+       .card{
+           height: auto !important;
+       }
+    </style>
+
+
+    <div class="products-navigation" style="display: none;">
+    </div>
+
+
+    <div class="container" style="">
+        <div class="" style="padding-top: 90px !important;margin-bottom: 30px;">
+        <div class="card" style="padding-top: 70px;padding-bottom: 15px;">
+
+            <center>
+                <img src="{% static 'assets/img/upload-profile.svg' %}" alt="Account activated" style="width: 200px;height: 180px;">
+            </center>
+
+            <div style="max-width: 540px; margin:0 auto; padding: 20px 0;height: auto !important">
+                <div style="width: 100%;">
+                    <div style="margin: 12px auto;text-align: center;padding-bottom: 30px;">
+                        {% get_current_language as lang %}
+                        {% if lang == "ar" %}
+                        <h1 style="font-size:22px; margin-bottom: 15px;">رائع تم تسجيلك بنجاح / {{ user.first_name }}</h1>
+                        <b>تم تأكيد حسابك بنجاح, نتمنى لك تجربة فريدة ومميزة في منصة بوستيب.</b>
+                        {% else %}
+                        <h1 style="font-size:22px;margin-bottom: 15px;">Congratulations, {{ user.first_name }}</h1>
+                        <b>Your account has been successfully activated.</b>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        </div>
+
+    </div>
+
+
+{% endblock %} {% block script %}
+
+<!-- Page and UI related js -->
+
+{% endblock %}
